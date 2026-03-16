@@ -1,13 +1,28 @@
-# gin-test-api
-example of using the gin framework with mysql8 via docker
+# gin-template
 
-# temporally if have issue with conection to db through vs code:
-docker exec -it mysql-db bash
-mysql -uroot -p
-ALTER USER 'gouser'@'%' IDENTIFIED WITH mysql_native_password BY 'gopassword';
-FLUSH PRIVILEGES;
+REST API example — Go 1.22, Gin, GORM, MySQL 8, Docker
 
-docker-compose restart mysql
+## Quick Start
+```bash
+make up
+```
 
+**API:** http://localhost:8054  
+**DB:** localhost:3307 · `gouser / gopassword` · `godb`
 
-run: http://localhost:8054/
+## Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | /users | List all users |
+| GET | /users/:id | Get user by ID |
+| POST | /users | Create user |
+| PUT | /users/:id | Update user |
+| DELETE | /users/:id | Delete user |
+
+## Development
+```bash
+make test   # run tests
+make lint   # golangci-lint
+make fmt    # gofmt
+```

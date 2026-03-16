@@ -1,4 +1,4 @@
-module gin-test-api
+module gin-template
 
 go 1.22
 
